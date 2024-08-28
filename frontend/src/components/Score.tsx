@@ -1,13 +1,11 @@
 import { useRecoilValue } from "recoil";
 import {
   compChoiceAtom,
-  compScoreAtom,
   scoreAtom,
   userChoiceAtom,
 } from "../atoms/choiceAtom";
 export function Score() {
   const score = useRecoilValue(scoreAtom);
-  const compScore = useRecoilValue(compScoreAtom);
   const userChoice = useRecoilValue(userChoiceAtom);
   const compChoice = useRecoilValue(compChoiceAtom);
   return (

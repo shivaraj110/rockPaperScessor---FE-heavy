@@ -1,5 +1,5 @@
 import { compChoiceAtom, userChoiceAtom } from "../atoms/choiceAtom";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import handChoice from "../constants/hand";
 import { calcRandomChoice } from "./Result";
 export function ChoiceCard(){

@@ -1,5 +1,5 @@
 import { ChoiceCard } from './components/ChoiceCard'
-import { RecoilRoot, useRecoilValue } from 'recoil'
+import { RecoilRoot } from 'recoil'
 import { Result } from './components/Result'
 import { Score } from './components/Score'
 function App() {
