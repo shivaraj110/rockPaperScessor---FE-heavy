@@ -3,7 +3,7 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import handChoice from "../constants/hand";
 import { calcRandomChoice } from "./Result";
 export function ChoiceCard(){
-    const [userChoice,setUserChoice]  = useRecoilState(userChoiceAtom)
+    const setUserChoice  = useSetRecoilState(userChoiceAtom)
     const  setCompChoice = useSetRecoilState(compChoiceAtom)
     let ucr : handChoice = "rock"
     let ucp : handChoice = "paper"
@@ -15,7 +15,7 @@ export function ChoiceCard(){
         <div className="col-span-3 flex justify-center">
       <div className="rounded-lg bg-white w-32 text-center p-2 h-28 px-4 flex justify-center mx-3 hover:animate-pulse ">
            <div className="self-center cursor-pointer" onClick={()=>{
-            setUserChoice(ucr)
+                      setUserChoice(c => c = ucr)
             setCompChoice(calcRandomChoice())
            }}>
             <img src='./images/icon-rock.svg' alt="" />
@@ -26,7 +26,7 @@ export function ChoiceCard(){
            </div>
            <div className="rounded-lg bg-white w-32 text-center p-2 h-28 px-4 flex justify-center mx-3 hover:animate-pulse">
            <div className="self-center cursor-pointer" onClick={()=>{
-            setUserChoice(ucp)
+            setUserChoice(c => c = ucp)
             setCompChoice(calcRandomChoice())
            }}>
             <img src='./images/icon-paper.svg' alt="" />
@@ -37,7 +37,7 @@ export function ChoiceCard(){
            </div>
            <div className="rounded-lg bg-white w-32 text-center p-2 h-28 px-4 flex justify-center mx-3 hover:animate-pulse">
            <div className="self-center cursor-pointer" onClick={()=>{
-            setUserChoice(ucs)
+                      setUserChoice(c => c = ucs)
             setCompChoice(calcRandomChoice())
            }}>
             <img src='./images/icon-scissors.svg' alt="" />
