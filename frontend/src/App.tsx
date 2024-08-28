@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import './App.css'
 import { ChoiceCard } from './components/ChoiceCard'
-import { RecoilRoot } from 'recoil'
+import { RecoilRoot, useRecoilValue } from 'recoil'
 import { Result } from './components/Result'
-
+import { Score } from './components/Score'
 function App() {
   return (
     <>
-    <div className="bg-slate-300 h-screen flex justify-center items-center">
-      <RecoilRoot><ChoiceCard/>
-      <Result/></RecoilRoot>
+      <RecoilRoot>
+    <div className="bg-slate-300 h-screen w-screen grid grid-cols-2 self-center">
+      <Score/>
+      <ChoiceCard/><br />
+      <Result/>
     </div>
+    </RecoilRoot>
     </>
   )
 }
